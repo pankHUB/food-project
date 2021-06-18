@@ -12,20 +12,23 @@
 
     {% block body %}
     {% for item in item_list %}
-
-     <div class="row" >
-         <div class="col-md-3  offset-md-1" >
-          <img  class="card " height="200px" src="{{item.item_image}}" >
+     <hr>
+     <div class="row" style="background-color: cornflowerblue;">
+         <div class="col-md-4  offset-md-1" >
+          <img  class="card " height="200px" width="300px" src="{{item.item_image}}"  >
          </div>
-         <div class="col-md-4">
+         <div class="col-md-3" >
           <h1>{{item.item_name}}</h1>
           <h3>{{ item.item_desc }}</h3>
           <h2>${{ item.item_price }}</h2>
+          <h6> {{ item.user_name}}</h6>
         </div>
-         <div class="col-md-2 offset-md-1">
+         <div class="col-md-2 offset-md-1" >
            <a href="{% url 'food:detail' item.id %}" class=" btn  btn-success">Details</a>
          </div>
      </div>
+    
+     
 
     {% endfor %}
     {% endblock %}
